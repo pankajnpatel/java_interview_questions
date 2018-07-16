@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------------
+How to set active profile in spring/spring-boot
+----------------------------------------------------------------------------------------------------------------------------------------
+1) spring.profiles.active=dev
+2) @ActiveProfile("dev")
+3) 
+<profile>
+	<id>production</id>
+	<activation>
+		<activeByDefault>true</activeByDefault>
+	</activation>
+	<properties>
+		<activeProfile>production</activeProfile>
+	</properties>
+</profile>
+4) mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=production"
+5) System.setProperty("spring.profiles.active", "dev");
+6) Or set environment variable on current machine
+
+----------------------------------------------------------------------------------------------------------------------------------------
